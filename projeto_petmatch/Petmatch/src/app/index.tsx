@@ -65,7 +65,9 @@ export default function Index() {
        <Text style = {styles.adicionar}> + Adicionar</Text>
        </View>
 
-       <View style = {styles.animais}>
+     <Pressable
+       onPress={() => router.push('/About')}
+       style = {styles.animais}>
 
        <View style = {styles.letra_animais}> 
        <Text style = {styles.letra}>M</Text>
@@ -83,7 +85,7 @@ export default function Index() {
 </View>
 
 <Text style={styles.seta}>›</Text>
-       </View>
+       </Pressable>
 
         <View style = {styles.animais}>
 
