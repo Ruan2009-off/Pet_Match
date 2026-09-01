@@ -1,4 +1,5 @@
 import { Text, View, StyleSheet, Pressable, Alert, Image, Linking } from 'react-native';
+import { router } from 'expo-router';
 
 export default function Index() {
 
@@ -17,7 +18,7 @@ export default function Index() {
       <View style = {styles.nav}>
 
       <Image
-  source={require('./assets/images/Patinhas.png')}
+  source={require('../../../assets/images/Patinhas.png')}
   style={styles.imagem}/>
       
        <Text style={styles.text}>Pet Match</Text>
@@ -28,14 +29,14 @@ export default function Index() {
        onPress={exibirAlerta} >
 
        <Image 
-       source={require('./assets/images/notificacao.png')}
+       source={require('../../../assets/images/notificacao.png')}
        style = {styles.notificacao}
        />
        </Pressable>
 
        <Pressable onPress = {exibirAlerta}>
        <Image
-       source = {require ('./assets/images/perfil.png')}
+       source = {require ('../../../assets/images/perfil.png')}
        style = {styles.perfil}/>
        
        </Pressable>
@@ -53,7 +54,7 @@ export default function Index() {
        
        <Pressable onPress = {abrirlink}>
        <Image
-       source = {require('./assets/images/Match.png')}
+       source = {require('../../../assets/images/Match.png')}
        style = {styles.anuncio}/>
        </Pressable>
 
