@@ -254,6 +254,6 @@ animais: {
   letra:{
     color: '#ffffff',
     fontSize: 30,
-    fontWeight:10,
+    fontWeight: "bold",
   },
 });
