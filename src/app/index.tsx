@@ -9,7 +9,7 @@ export default function Index() {
 };
 
     const abrirlink = () =>{
-      Linking.openURL('https://png.pngtree.com/thumb_back/fh260/background/20220630/pngtree-ape-shows-finger-zoo-fuck-naughty-photo-image_1110169.jpg');
+      Linking.openURL('https://thumbnails.cbsig.net/CBS_Production_Entertainment_VMS/2023/05/28/2215861315844/PPNJLA_PAWPATROL_917_2223869_1920x1080.jpg');
     };
   return (
     <View>
@@ -18,7 +18,7 @@ export default function Index() {
       <View style = {styles.nav}>
 
       <Image
-  source={require('../../../assets/images/Patinhas.png')}
+  source={require('../../assets/images/Patinhas.png')}
   style={styles.imagem}/>
       
        <Text style={styles.text}>Pet Match</Text>
@@ -29,14 +29,14 @@ export default function Index() {
        onPress={exibirAlerta} >
 
        <Image 
-       source={require('../../../assets/images/notificacao.png')}
+       source={require('../../assets/images/notificacao.png')}
        style = {styles.notificacao}
        />
        </Pressable>
 
        <Pressable onPress = {exibirAlerta}>
        <Image
-       source = {require ('../../../assets/images/perfil.png')}
+       source = {require ('../../assets/images/perfil.png')}
        style = {styles.perfil}/>
        
        </Pressable>
@@ -54,7 +54,7 @@ export default function Index() {
        
        <Pressable onPress = {abrirlink}>
        <Image
-       source = {require('../../../assets/images/Match.png')}
+       source = {require('../../assets/images/Match.png')}
        style = {styles.anuncio}/>
        </Pressable>
 
