@@ -7,14 +7,13 @@ import {
   ScrollView,
   StyleSheet,
   Alert,
-  SafeAreaView,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { router } from 'expo-router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { Ionicons } from '@expo/vector-icons';
+import { STORAGE_KEY } from '@/data/animais';
 
-const STORAGE_KEY = '@animais';
-
-export default function NovoAnimal({ navigation }) {
+export default function NovoAnimal() {
   const [nome, setNome] = useState('');
   const [especie, setEspecie] = useState('Cachorro');
   const [raca, setRaca] = useState('');
@@ -48,15 +47,18 @@ export default function NovoAnimal({ navigation }) {
         especie,
         raca: raca.trim(),
 
-        cuidados: [
-          {
-            id: Date.now().toString(),
-            tipo: tipoCuidado,
-            descricao: descricao.trim(),
-            data: data.trim(),
-            concluido: false,
-          },
-        ],
+        // O cuidado é opcional: só salva se a descrição foi preenchida
+        cuidados: descricao.trim()
+          ? [
+              {
+                id: `${Date.now()}-c`,
+                tipo: tipoCuidado,
+                descricao: descricao.trim(),
+                data: data.trim(),
+                concluido: false,
+              },
+            ]
+          : [],
       };
 
       // Adiciona o novo animal à lista
@@ -77,7 +79,7 @@ export default function NovoAnimal({ navigation }) {
         [
           {
             text: 'OK',
-            onPress: () => navigation.goBack(),
+            onPress: () => router.back(),
           },
         ]
       );
@@ -104,14 +106,10 @@ export default function NovoAnimal({ navigation }) {
         {/* CABEÇALHO */}
         <View style={styles.header}>
           <TouchableOpacity
-            onPress={() => navigation.goBack()}
+            onPress={() => router.back()}
             style={styles.backButton}
           >
-            <Ionicons
-              name="chevron-back"
-              size={22}
-              color="#FF6548"
-            />
+            <Text style={styles.backIcon}>‹</Text>
           </TouchableOpacity>
 
           <View>
@@ -188,11 +186,7 @@ export default function NovoAnimal({ navigation }) {
         <View style={styles.careContainer}>
 
           <View style={styles.careHeader}>
-            <Ionicons
-              name="heart-outline"
-              size={15}
-              color="#FF6548"
-            />
+            <Text style={styles.heartIcon}>♥</Text>
 
             <Text style={styles.careTitle}>
               Adicionar cuidado
@@ -306,6 +300,17 @@ const styles = StyleSheet.create({
   backButton: {
     marginRight: 3,
     padding: 3,
+  },
+
+  backIcon: {
+    fontSize: 32,
+    lineHeight: 34,
+    color: '#FF6548',
+  },
+
+  heartIcon: {
+    fontSize: 13,
+    color: '#FF6548',
   },
 
   title: {
