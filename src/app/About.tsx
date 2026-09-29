@@ -1,124 +1,105 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { useEffect, useState } from 'react';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { useLocalSearchParams } from 'expo-router';
+import { carregarAnimais, animaisExemplo, type Animal } from '@/data/animais';
 
 export default function About() {
+  const { id } = useLocalSearchParams<{ id?: string }>();
+  const [animal, setAnimal] = useState<Animal>(
+    animaisExemplo.find((a) => a.id === id) ?? animaisExemplo[0]
+  );
 
-  const cuidados = [
-    { id: 1, tipo: 'VACINA', descricao: 'V10 (múltipla)', data: '10/03/2026' },
-    { id: 2, tipo: 'CONSULTA', descricao: 'Check-up de rotina', data: '22/05/2026' },
-    { id: 3, tipo: 'ALIMENTAÇÃO', descricao: 'Ração premium adulto, 2x ao dia', data: '01/08/2026' },
-  ];
+  useEffect(() => {
+    carregarAnimais().then((lista) => {
+      const achado = lista.find((a) => a.id === id);
+      if (achado) setAnimal(achado);
+    });
+  }, [id]);
 
   return (
+    <ScrollView style={styles.tela} contentContainerStyle={styles.conteudo}>
+      <View style={styles.container}>
+        <View style={styles.bolaPerfil}>
+          <Text style={styles.text}>{animal.nome[0]}</Text>
+        </View>
 
-    <View>
-
-    <View style = {styles.container}>
-
-    <View style = {styles.bola_perfil}>
-    <Text style = {styles.text}>T</Text>
-    </View>
-
-    <View>
-    <Text style = {styles.text_nome}> Thor </Text>
-    <Text> Cachorro . Golden Retriever </Text>
-    </View>
-
-    </View>
-
-    <View style = {styles.historico_de_cuidados_titulo}>
-    <Text style = {styles.text_nome}>Histórico de cuidados </Text>
-    <Text style = {styles.text_itens}>{cuidados.length} itens</Text>
-    </View>
-
-    <View style = {styles.lista_cuidados}>
-
-    {cuidados.map((item) => (
-      <View key = {item.id} style = {styles.cuidado_item}>
-      <Text style = {styles.cuidado_tipo}>{item.tipo}</Text>
-      <Text style = {styles.cuidado_descricao}>{item.descricao}</Text>
-      <Text style = {styles.cuidado_data}>{item.data}</Text>
+        <Text style={styles.textNome}>{animal.nome}</Text>
+        <Text>
+          {animal.especie}{animal.raca ? ` · ${animal.raca}` : ''}
+        </Text>
       </View>
-    ))}
 
-    </View>
+      <View style={styles.historicoTitulo}>
+        <Text style={styles.textNome}>Histórico de cuidados</Text>
+        <Text style={styles.textItens}>{animal.cuidados.length} itens</Text>
+      </View>
 
-    </View>
-
+      <View style={styles.listaCuidados}>
+        {animal.cuidados.map((item, i) => (
+          <View
+            key={item.id}
+            style={[styles.cuidadoItem, i === animal.cuidados.length - 1 && styles.semBorda]}
+          >
+            <Text style={styles.cuidadoTipo}>{item.tipo.toUpperCase()}</Text>
+            <Text style={styles.cuidadoDescricao}>{item.descricao}</Text>
+            {item.data ? <Text style={styles.cuidadoData}>{item.data}</Text> : null}
+          </View>
+        ))}
+      </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
+  tela: { flex: 1, backgroundColor: '#ffffff' },
+  conteudo: { padding: 16, paddingBottom: 32 },
   container: {
-    width: 350,
-    height: 210,
-    marginTop: 100,
-    alignSelf: 'center',
-    borderWidth:0.5,
+    width: '100%',
+    paddingVertical: 24,
+    borderWidth: 0.5,
     borderRadius: 25,
     alignItems: 'center',
   },
-  bola_perfil: {
-    width:88,
+  bolaPerfil: {
+    width: 88,
     height: 88,
-    borderRadius:100,
-    marginTop: 25,
-    backgroundColor:'#E28B5C',
+    borderRadius: 44,
+    marginBottom: 12,
+    backgroundColor: '#E28B5C',
     alignItems: 'center',
     justifyContent: 'center',
   },
-  text:{
-    color: '#ffffff',
-    fontWeight: 'bold',
-    fontSize: 26,
-    alignItems:'center',
+  text: { color: '#ffffff', fontWeight: 'bold', fontSize: 26 },
+  textNome: { fontWeight: 'bold', fontSize: 26 },
+  historicoTitulo: {
+    marginTop: 20,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
-  text_nome:{
-    alignSelf: 'center',
+  textItens: {
+    color: '#D97706',
+    backgroundColor: '#FEF3C7',
+    paddingHorizontal: 8,
+    paddingVertical: 3,
+    borderRadius: 12,
+    fontSize: 12,
     fontWeight: 'bold',
-    fontSize: 26,
+    overflow: 'hidden',
   },
- historico_de_cuidados_titulo:{
-   width: 350,
-   alignSelf: 'center',
-   marginTop: 20,
-   flexDirection: 'row',
-   justifyContent: 'space-between',
-   alignItems: 'center',
- },
- text_itens:{
-   color:'#D97706',
-   backgroundColor: '#FEF3C7',
-   paddingHorizontal: 8,
-   paddingVertical: 3,
-   borderRadius: 12,
-   fontSize: 12,
-   fontWeight: 'bold',
- },
- lista_cuidados: {
-   width: 350,
-   alignSelf: 'center',
-   marginTop: 12,
-   borderWidth: 0.5,
-   borderRadius: 25,
-   paddingHorizontal: 16,
- },
- cuidado_item: {
-   paddingVertical: 14,
-   borderBottomWidth: 0.5,
-   borderBottomColor: '#E5E7EB',
- },
- cuidado_tipo: {
-   fontWeight: 'bold',
-   fontSize: 12,
-   color: '#6B7280',
-   marginBottom: 2,
- },
- cuidado_descricao: {
-   fontSize: 15,
- },
- cuidado_data: {
-   fontSize: 12,
-   color: '#9CA3AF',
-   marginTop: 2,
- },
+  listaCuidados: {
+    marginTop: 12,
+    borderWidth: 0.5,
+    borderRadius: 25,
+    paddingHorizontal: 16,
+  },
+  cuidadoItem: {
+    paddingVertical: 14,
+    borderBottomWidth: 0.5,
+    borderBottomColor: '#E5E7EB',
+  },
+  semBorda: { borderBottomWidth: 0 },
+  cuidadoTipo: { fontWeight: 'bold', fontSize: 12, color: '#6B7280', marginBottom: 2 },
+  cuidadoDescricao: { fontSize: 15 },
+  cuidadoData: { fontSize: 12, color: '#9CA3AF', marginTop: 2 },
 });
