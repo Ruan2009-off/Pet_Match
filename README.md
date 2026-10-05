@@ -1,5 +1,21 @@
 # Pet Match
 
+<!-- PAM-CI-NOTA-INICIO -->
+### Nota atual (automática) — Zenin's (adoção de pets)
+
+[![CI](https://github.com/Ruan2009-off/Pet_Match/actions/workflows/pam-ci.yml/badge.svg)](https://github.com/Ruan2009-off/Pet_Match/actions/workflows/pam-ci.yml) [![Nota](https://img.shields.io/badge/Nota%20PAM%20I-R-orange)](https://github.com/Ruan2009-off/Pet_Match/actions/workflows/pam-ci.yml)
+
+**R** — Regular · **36%** (20/55 pontos) · atualizado em 2026-10-05 23:26
+
+| Fase | Pontos |
+|------|--------|
+| Fase 1 — Estrutura | 7/10 |
+| Fase 2 — AsyncStorage | 11/15 |
+| Fase 3 — SQLite | 2/30 |
+
+Checklist item a item em [NOTA.md](NOTA.md) · [ver a rodada mais recente no Actions](https://github.com/Ruan2009-off/Pet_Match/actions/workflows/pam-ci.yml)
+<!-- PAM-CI-NOTA-FIM -->
+
 **Zenin's** — Trabalho em Grupo de PAM I
 
 Aplicativo para **pets** (encontrar e cadastrar pets para adoção/informações).
