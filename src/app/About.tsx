@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useLocalSearchParams } from 'expo-router';
-import { carregarAnimais, animaisExemplo, type Animal } from '@/data/animais';
+import { carregarAnimais, animaisExemplo, formatarData, type Animal } from '@/data/animais';
 
 export default function About() {
   const { id } = useLocalSearchParams<{ id?: string }>();
@@ -42,7 +42,7 @@ export default function About() {
           >
             <Text style={styles.cuidadoTipo}>{item.tipo.toUpperCase()}</Text>
             <Text style={styles.cuidadoDescricao}>{item.descricao}</Text>
-            {item.data ? <Text style={styles.cuidadoData}>{item.data}</Text> : null}
+            {item.data ? <Text style={styles.cuidadoData}>{formatarData(item.data)}</Text> : null}
           </View>
         ))}
       </View>
