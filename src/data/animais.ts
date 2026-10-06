@@ -20,6 +20,15 @@ export type Animal = {
   cuidados: Cuidado[];
 };
 
+export function formatarData(valor: string): string {
+  const somenteDigitos = valor.replace(/\D/g, '').slice(0, 8);
+
+  if (somenteDigitos.length <= 2) return somenteDigitos;
+  if (somenteDigitos.length <= 4) return `${somenteDigitos.slice(0, 2)}/${somenteDigitos.slice(2)}`;
+
+  return `${somenteDigitos.slice(0, 2)}/${somenteDigitos.slice(2, 4)}/${somenteDigitos.slice(4, 8)}`;
+}
+
 export const animaisExemplo: Animal[] = [
   {
     id: '1',
