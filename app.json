@@ -4,7 +4,7 @@
     "slug": "Petmatch",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/Patinhas.png",
     "scheme": "petmatch",
     "userInterfaceStyle": "automatic",
     "ios": {
