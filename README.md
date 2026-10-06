@@ -5,7 +5,7 @@
 
 [![CI](https://github.com/Ruan2009-off/Pet_Match/actions/workflows/pam-ci.yml/badge.svg)](https://github.com/Ruan2009-off/Pet_Match/actions/workflows/pam-ci.yml) [![Nota](https://img.shields.io/badge/Nota%20PAM%20I-R-orange)](https://github.com/Ruan2009-off/Pet_Match/actions/workflows/pam-ci.yml)
 
-**R** — Regular · **36%** (20/55 pontos) · atualizado em 2026-10-05 23:27
+**R** — Regular · **36%** (20/55 pontos) · atualizado em 2026-10-06 01:26
 
 | Fase | Pontos |
 |------|--------|
