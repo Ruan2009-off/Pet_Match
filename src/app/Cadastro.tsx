@@ -11,7 +11,7 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { router } from 'expo-router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { STORAGE_KEY } from '@/data/animais';
+import { formatarData, STORAGE_KEY } from '@/data/animais';
 
 export default function NovoAnimal() {
   const [nome, setNome] = useState('');
@@ -41,6 +41,8 @@ export default function NovoAnimal() {
         : [];
 
       // Cria o novo animal
+      const novaData = formatarData(data);
+
       const novoAnimal = {
         id: Date.now().toString(),
         nome: nome.trim(),
@@ -54,7 +56,7 @@ export default function NovoAnimal() {
                 id: `${Date.now()}-c`,
                 tipo: tipoCuidado,
                 descricao: descricao.trim(),
-                data: data.trim(),
+                data: novaData,
                 concluido: false,
               },
             ]
@@ -254,7 +256,7 @@ export default function NovoAnimal() {
           <TextInput
             style={styles.input}
             value={data}
-            onChangeText={setData}
+            onChangeText={(texto) => setData(formatarData(texto))}
             placeholder="dd/mm/aaaa"
             placeholderTextColor="#A5A5A5"
             keyboardType="numeric"
