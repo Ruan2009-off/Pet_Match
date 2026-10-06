@@ -6,14 +6,14 @@
 
 ![](https://img.shields.io/static/v1?label=Nota%20PAM%20I&message=R&color=orange)
 
-**Nota atual: R** · 36% (20/55 pontos) · rodada de 2026-10-06 01:26:58 · commit `1cc4b79`
+**Nota atual: R** · 38% (21/55 pontos) · rodada de 2026-10-06 01:27:52 · commit `8b05bbe`
 
 Legenda: I = Insuficiente (0–25%) · R = Regular (25–50%) · B = Bom (50–75%) · MB = Muito bom (75–100%)
 
 | Fase | Pontos | Situação |
 |---|---|---|
 | Fase 1 — Estrutura | 7/10 | em desenvolvimento |
-| Fase 2 — AsyncStorage | 11/15 | em desenvolvimento |
+| Fase 2 — AsyncStorage | 12/15 | em desenvolvimento |
 | Fase 3 — SQLite | 2/30 | iniciando |
 
 ## Checklist validado
@@ -27,13 +27,13 @@ Legenda: I = Insuficiente (0–25%) · R = Regular (25–50%) · B = Bom (50–7
 - [x] **(+1 pts)** Existem dados iniciais (seed) em arquivo de dados — `src/app/Cadastro.tsx`
 - [x] **(+1 pts)** Existe tela de FORMULÁRIO — `src/app/Cadastro.tsx`
 - [ ] **(+1 pts)** Existe tela de DETALHE — `—`
-- [ ] **(+1 pts)** Dependências importadas existem no package.json (app não quebra ao abrir) — `@/data/animais, @react-native-async-storage/async-storage`
+- [ ] **(+1 pts)** Dependências importadas existem no package.json (app não quebra ao abrir) — `@/data/animais`
 - [x] **(+1 pts)** app.json identifica o app (name/slug preenchidos) — `app.json`
 - [ ] **(+1 pts)** Projeto tem pelo menos 2 arquivos de tela/código — `1 arquivos de tela`
 
-### Fase 2 — Persistência com AsyncStorage (11/15 pts)
+### Fase 2 — Persistência com AsyncStorage (12/15 pts)
 
-- [ ] **(+1 pts)** Dependência async-storage está no package.json — `FALTA instalar: npx expo install @react-native-async-storage/async-storage`
+- [x] **(+1 pts)** Dependência async-storage está no package.json — `no package.json`
 - [x] **(+1 pts)** Existe import do AsyncStorage no código — `src/app/Cadastro.tsx`
 - [x] **(+1 pts)** Storage faz leitura com AsyncStorage.getItem — `src/app/Cadastro.tsx`
 - [x] **(+1 pts)** Storage grava com AsyncStorage.setItem — `src/app/Cadastro.tsx`
