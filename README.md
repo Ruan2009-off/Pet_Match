@@ -56,6 +56,7 @@ Projeto criado com [`create-expo-app`](https://www.npmjs.com/package/create-expo
 | Fase 4 | Versão final + apresentação | 16/11/2026 |
 
 
+
 ---
 
 ## Colaboração por integrante
@@ -64,7 +65,7 @@ Projeto criado com [`create-expo-app`](https://www.npmjs.com/package/create-expo
 
 | # | Integrante | Commits | Participação |
 |---|------------|---------|--------------|
-| 1 | Ruan2009-off | 14 | 63.6% ████████████░░░░░░░░ |
+| 1 | Ruan Miguel Fagundes | 14 | 63.6% ████████████░░░░░░░░ |
 | 2 | victor08ribs-bot | 3 | 13.6% ██░░░░░░░░░░░░░░░░░░ |
 | 3 | Vinibielamaral | 3 | 13.6% ██░░░░░░░░░░░░░░░░░░ |
 | 4 | Ruan Miguel | 2 | 9.1% █░░░░░░░░░░░░░░░░░░░ |
