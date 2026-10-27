@@ -6,7 +6,7 @@
 
 ![](https://img.shields.io/static/v1?label=Nota%20PAM%20I&message=R&color=orange)
 
-**Nota atual: R** · 38% (21/55 pontos) · rodada de 2026-10-06 01:29:43 · commit `f090aea`
+**Nota atual: R** · 38% (21/55 pontos) · rodada de 2026-10-27 00:12:26 · commit `2338c23`
 
 Legenda: I = Insuficiente (0–25%) · R = Regular (25–50%) · B = Bom (50–75%) · MB = Muito bom (75–100%)
 
