@@ -54,3 +54,20 @@ Projeto criado com [`create-expo-app`](https://www.npmjs.com/package/create-expo
 | Fase 2 | Formulário + persistência com AsyncStorage | 14/09/2026 |
 | Fase 3 | SQLite + CRUD completo | 19/10/2026 |
 | Fase 4 | Versão final + apresentação | 16/11/2026 |
+
+
+
+---
+
+## Colaboração por integrante
+
+> *Excluídos: commits do professor Jackson Sá (wendelmax), `github-actions[bot]` e `dependabot[bot]`. Contagem com base em `git log --no-merges`.*
+
+| # | Integrante | Commits | Participação |
+|---|------------|---------|--------------|
+| 1 | Ruan Miguel Fagundes | 14 | 63.6% ████████████░░░░░░░░ |
+| 2 | victor08ribs-bot | 3 | 13.6% ██░░░░░░░░░░░░░░░░░░ |
+| 3 | Vinibielamaral | 3 | 13.6% ██░░░░░░░░░░░░░░░░░░ |
+| 4 | Ruan Miguel | 2 | 9.1% █░░░░░░░░░░░░░░░░░░░ |
+
+**Total de commits considerados:** 22
