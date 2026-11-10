@@ -1,12 +1,12 @@
 > Este arquivo e **gerado automaticamente** pelo CI a cada push na branch `main`.
 > Nao edite a mao: o proximo commit do CI sobrescreve. Para ver a rodada no Actions:
-> https://github.com/ORG/REPO/actions/workflows/pam-ci.yml
+> https://github.com/Ruan2009-off/Pet_Match/actions/workflows/pam-ci.yml
 
 ## Nota PAM I — Zenin's (adoção de pets)
 
 ![](https://img.shields.io/static/v1?label=Nota%20PAM%20I&message=R&color=orange)
 
-**Nota atual: R** · 35% (35/100 pontos) · rodada de 2026-11-10 01:29:01 · commit `local`
+**Nota atual: R** · 35% (35/100 pontos) · rodada de 2026-11-10 01:34:32 · commit `3ab29b2`
 
 Legenda: I = Insuficiente (0–25%) · R = Regular (25–50%) · B = Bom (50–75%) · MB = Muito bom (75–100%)
 
@@ -94,7 +94,7 @@ Legenda: I = Insuficiente (0–25%) · R = Regular (25–50%) · B = Bom (50–7
 - [x] **(+3 pts)** UX: Mensagem de erro amigável e validação se falhar ao SALVAR/EXCLUIR (try/catch + Alert/.trim) — `src/app/Cadastro.tsx + validação .trim()`
 - [x] **(+3 pts)** Organização do código: separação em pastas por responsabilidade (screens/app, database/data, components) — `pastas: components, app, data`
 - [ ] **(+3 pts)** Interface consistente: FlatList (keyExtractor + renderItem) e estilização StyleSheet.create — `FALTA FlatList com keyExtractor/renderItem e StyleSheet.create consistente`
-- [x] **(+3 pts)** Entrega: repositório limpo (.gitignore sem node_modules) e README com instruções/Expo Go/APK — `README.md (47 linhas) + .gitignore`
+- [x] **(+3 pts)** Entrega: repositório limpo (.gitignore sem node_modules) e README com instruções/Expo Go/APK — `README.md (48 linhas) + .gitignore`
 
 ## Para evoluir a nota
 
