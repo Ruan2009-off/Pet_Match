@@ -6,15 +6,15 @@
 
 ![](https://img.shields.io/static/v1?label=Nota%20PAM%20I&message=R&color=orange)
 
-**Nota atual: R** · 35% (35/100 pontos) · rodada de 2026-11-10 01:34:32 · commit `3ab29b2`
+**Nota atual: R** · 46% (46/100 pontos) · rodada de 2026-11-16 23:42:52 · commit `1567398`
 
 Legenda: I = Insuficiente (0–25%) · R = Regular (25–50%) · B = Bom (50–75%) · MB = Muito bom (75–100%)
 
 | Fase | Peso | Pontos | Situação |
 |---|---|---|---|
-| Fase 1 — Estrutura | 1x (10 pts) | 9/10 | em desenvolvimento |
+| Fase 1 — Estrutura | 1x (10 pts) | 8/10 | em desenvolvimento |
 | Fase 2 — AsyncStorage | 1x (15 pts) | 12/15 | em desenvolvimento |
-| Fase 3 — SQLite | 2x (30 pts) | 2/30 | iniciando |
+| Fase 3 — SQLite | 2x (30 pts) | 14/30 | iniciando |
 | Fase 4 — Versão Final (SQLite + UX + Dispositivo) | 3x (45 pts) | 12/45 | iniciando |
 
 ## Resumo dos Testes Funcionais (Execução Real em Runtime Node + SQLite)
@@ -29,7 +29,7 @@ Legenda: I = Insuficiente (0–25%) · R = Regular (25–50%) · B = Bom (50–7
 
 ## Checklist validado
 
-### Fase 1 — Estrutura do projeto (9/10 pts · peso 1x)
+### Fase 1 — Estrutura do projeto (8/10 pts · peso 1x)
 
 - [x] **(+1 pts)** README.md existe e fala do projeto/grupo — `README.md`
 - [x] **(+1 pts)** Arquivo principal do app existe (src/app/_layout.tsx) — `src/app/_layout.tsx`
@@ -38,7 +38,7 @@ Legenda: I = Insuficiente (0–25%) · R = Regular (25–50%) · B = Bom (50–7
 - [x] **(+1 pts)** Existem dados iniciais (seed) em arquivo de dados — `src/app/Cadastro.tsx`
 - [x] **(+1 pts)** Existe tela de FORMULÁRIO — `src/app/Cadastro.tsx`
 - [ ] **(+1 pts)** Existe tela de DETALHE — `—`
-- [x] **(+1 pts)** Dependências importadas existem no package.json (app não quebra ao abrir) — `todos os imports resolvem`
+- [ ] **(+1 pts)** Dependências importadas existem no package.json (app não quebra ao abrir) — `expo-sqlite`
 - [x] **(+1 pts)** app.json identifica o app (name/slug preenchidos) — `app.json`
 - [x] **(+1 pts)** Projeto tem pelo menos 2 arquivos de tela/código — `4 arquivos de tela`
 
@@ -60,20 +60,20 @@ Legenda: I = Insuficiente (0–25%) · R = Regular (25–50%) · B = Bom (50–7
 - [x] **(+1 pts)** Dados iniciais/seed são gravados na 1ª execução — `src/app/Cadastro.tsx`
 - [x] **(+1 pts)** Formulário valida campos (trim/length/vazio) — `src/app/Cadastro.tsx`
 
-### Fase 3 — Banco de dados SQLite (2/30 pts · peso 2x)
+### Fase 3 — Banco de dados SQLite (14/30 pts · peso 2x)
 
 - [ ] **(+2 pts)** Dependência expo-sqlite está no package.json — `FALTA instalar: npx expo install expo-sqlite`
-- [ ] **(+2 pts)** Existe import do expo-sqlite — `—`
-- [ ] **(+2 pts)** Existe arquivo de banco de dados — `—`
-- [ ] **(+2 pts)** Cria a tabela com CREATE TABLE IF NOT EXISTS — `—`
+- [x] **(+2 pts)** Existe import do expo-sqlite — `components/banco.tsx`
+- [x] **(+2 pts)** Existe arquivo de banco de dados — `components/banco.tsx`
+- [x] **(+2 pts)** Cria a tabela com CREATE TABLE IF NOT EXISTS — `components/banco.tsx`
 - [ ] **(+2 pts)** Insere dados com INSERT INTO — `—`
 - [ ] **(+2 pts)** Consulta com SELECT — `—`
 - [ ] **(+2 pts)** Atualiza com UPDATE — `—`
 - [ ] **(+2 pts)** Exclui com DELETE FROM — `—`
 - [ ] **(+2 pts)** Usa filtros com WHERE — `—`
-- [ ] **(+2 pts)** Banco aberto com openDatabaseAsync/openDatabaseSync/openDatabase — `—`
-- [ ] **(+2 pts)** Tela de lista carrega dados do banco — `src/app/index.tsx`
-- [ ] **(+2 pts)** Formulário salva no banco (INSERT/runAsync/runSync) — `src/app/Cadastro.tsx`
+- [x] **(+2 pts)** Banco aberto com openDatabaseAsync/openDatabaseSync/openDatabase — `components/banco.tsx`
+- [x] **(+2 pts)** Tela de lista carrega dados do banco — `src/app/index.tsx`
+- [x] **(+2 pts)** Formulário salva no banco (INSERT/runAsync/runSync) — `src/app/Cadastro.tsx`
 - [ ] **(+2 pts)** Detalhe busca no banco com WHERE/SELECT — `—`
 - [x] **(+2 pts)** Usa async/await corretamente (mais de 2 await) — `src/app/Cadastro.tsx`
 - [ ] **(+2 pts)** Banco possui dados iniciais (seed inserido em SQL) — `—`
